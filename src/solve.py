@@ -39,6 +39,6 @@ if __name__ == '__main__':
     
     print(f"Found {len(candidates)} checksum solutions")
     for sol in candidates:
-        res = subprocess.run(['./crack_x86'], input=sol, text=True, capture_output=True).stdout
+        res = subprocess.run(['./crack_x86'], input=f"{sol}\n", text=True, capture_output=True).stdout
         if "Correct" in res:
             print(f"Verified: {sol}\n")

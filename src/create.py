@@ -118,7 +118,7 @@ int main() {{
     char input[128];
     long bytes_read = sys_read(0, input, 128);
     
-    if (bytes_read != INPUT_SIZE) {{
+    if (bytes_read != INPUT_SIZE + 1) {{
         print_string("Incorrect\\n");
         return 1;
     }}
