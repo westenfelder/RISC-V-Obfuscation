@@ -1,0 +1,14 @@
+name: riscv-project
+services:
+  riscv:
+    build: .
+    image: riscv-image:latest
+    container_name: riscv-container
+    hostname: riscv
+    volumes:
+      - .:/workspace
+    working_dir: /workspace/src
+    stdin_open: true
+    tty: true
+    environment:
+      - PS1=\u@riscv-dev:\w\$

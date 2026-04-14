@@ -1,0 +1,14 @@
+*
+!.gitignore
+!Makefile
+!create.py
+!obfuscate.py
+!solve.py
+!requirements.txt
+!rvemu/
+!rvemu/Makefile
+!rvemu/.clang-format
+!rvemu/src
+!rvemu/src/*
+rvemu/src/crack.h
+rvemu/src/shuffle.h
