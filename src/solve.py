@@ -38,7 +38,15 @@ if __name__ == '__main__':
     candidates = solve(*vals)
     
     print(f"Found {len(candidates)} checksum solutions")
-    for sol in candidates:
-        res = subprocess.run(['./crack_x86'], input=f"{sol}\n", text=True, capture_output=True).stdout
+    solutions = []
+    for candidate in candidates:
+        res = subprocess.run(['./crack_x86'], input=f"{candidate}\n", text=True, capture_output=True).stdout
         if "Correct" in res:
-            print(f"Verified: {sol}\n")
+            solutions.append(candidate)
+        
+    if len(solutions) != 1:
+        print("ERROR: Verification Failed.")
+        print("Build Failed")
+    else:
+        print(f"Verified: {solutions[0]}\n")
+        print("Build Succeeded")
